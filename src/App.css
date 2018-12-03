@@ -1,32 +1,109 @@
-.App {
-  text-align: center;
+/*
+The styles should be refactored with style-components / postCSS / other
+*/
+.app {
+    width: 100%;
+    max-width: 768px;
+    margin: 0px auto;
+    color: #333;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.text-input {
+    border-radius: 3px;
+    border: 1px solid transparent;
+    color: #333;
+    font-family: inherit;
+    font-size: 13px;
+    height: 20px;
+    line-height: 20px;
+    outline: none;
+    padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.text-input::placeholder {
+    font-weight: 300;
+    font-style: italic;
+    color: #777777;
 }
 
-.App-link {
-  color: #61dafb;
+.search-bar {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    background-color: #333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-in {
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    margin: 0 10px;
+    padding-bottom: 5px;
+}
+
+.query-search .text-input {
+    width: 160px;
+}
+
+.location-search {
+    position: relative;
+}
+
+.location-search .text-input {
+    padding-right: 35px;
+    width: 160px;
+}
+
+.location-search .location-icon {
+    width: 20px;
+    height: 20px;
+    right: 10px;
+    position: absolute;
+    top: 11px;
+    cursor: pointer;
+    color: inherit;
+}
+
+.venue {
+    background: white;
+    position: relative;
+    min-width: 150px;
+    padding: 10px;
+    flex-grow: 1;
+    margin: 4px 0;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+[data-role="status"] {
+    font-size: 14px;
+    padding: 10px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.venue [data-role="name"] {
+    font-size: 20px;
+    padding: 5px 0;
+}
+
+.venue [data-role="addess"] {
+    font-weight: 300;
+    font-style: italic;
+    color: #777;
+    word-wrap: break-word;
+}
+
+.venue [data-role="category"] {
+    font-size: 12px;
+}
+
+.venue [data-role="distance"] {
+    position: absolute;
+    top: 17px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px;
+    color: white;
 }
