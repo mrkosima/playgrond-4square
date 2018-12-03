@@ -1,5 +1,6 @@
 import { throwError } from "rxjs";
 import { ajax } from "rxjs/observable/dom/ajax";
+import { map, catchError } from "rxjs/operators";
 import buildUrl from "build-url";
 
 const BASE_URL = "https://api.foursquare.com/v2";
@@ -44,16 +45,18 @@ const getVenueSearchParams = ({ query, locationCoords, locationName }) => {
 };
 
 export function getVenues(settings) {
-    return baseRequest(SEARCH_PATH, getVenueSearchParams(settings))
-        .map(({ response }) => {
-            return response.venues})
-        .catch(error => {
+    return baseRequest(SEARCH_PATH, getVenueSearchParams(settings)).pipe(
+        map(({ response }) => {
+            return response.venues;
+        }),
+        catchError(error => {
             if (error.response) {
                 const meta = error.response.meta;
                 return throwError(`Error ${meta.code}. ${meta.errorDetail}`);
             }
             return throwError("Unknown error");
-        });
+        })
+    );
 }
 
 export function getCategories() {
