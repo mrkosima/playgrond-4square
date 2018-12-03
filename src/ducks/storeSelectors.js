@@ -6,6 +6,7 @@ export const selectCoords = state => selectSearch(state).coords;
 
 // Venues
 const selectVenues = state => state.venues;
+export const selectVenuesInitialized = state => selectVenues(state).initialized;
 export const selectVenuesItems = state => selectVenues(state).items;
 export const selectVenuesLoading = state => selectVenues(state).loading;
 

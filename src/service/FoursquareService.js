@@ -7,9 +7,9 @@ const BASE_URL = "https://api.foursquare.com/v2";
 const SEARCH_PATH = "/venues/search";
 const CATEGORIES_PATH = "/venues/categories";
 
-const client_id = process.env.CLIENT_ID;
-const client_secret = process.env.CLIENT_SERCET;
-const v = process.env.API_VERSION;
+const client_id = process.env.REACT_APP_CLIENT_ID;
+const client_secret = process.env.REACT_APP_CLIENT_SERCET;
+const v = process.env.REACT_APP_API_VERSION;
 
 function getUrl(path, params) {
     return buildUrl(BASE_URL, {
