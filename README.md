@@ -1,5 +1,5 @@
 # playground-4square
-[![Build Status](https://travis-ci.org/mrkosima/playgrond-4square.svg?branch=master)](https://travis-ci.org/mrkosima/playgrond-4square)
+[![Build Status](https://travis-ci.org/mrkosima/playground-4square.svg?branch=master)](https://travis-ci.org/mrkosima/playgrond-4square)
 
 A playground project with usages of:
 
